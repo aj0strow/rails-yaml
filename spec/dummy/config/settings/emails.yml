@@ -1,0 +1,13 @@
+defaults: &defaults
+  support: help
+
+production:
+  <<: *defaults
+  domain: example.com
+  
+development: &development
+  <<: *defaults
+  domain: localhost
+
+test:
+  <<: *development
