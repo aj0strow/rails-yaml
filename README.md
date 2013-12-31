@@ -1,8 +1,12 @@
 # rails-yaml
 
-Writing out `YAML.load(Rails.root.join('config/settings/filename.yml'))[Rails.env]` sucks. Writing `Rails.yaml(:filename)` is nicer. 
+```ruby
+YAML.load(Rails.root.join('config/settings/filename.yml'))[Rails.env]
+```
 
-Copy `rails/yaml.rb` into the `config/initializers` folder. In your app, you'll be able to access configuration by filename. It wants a `config/settings` folder, but allows using the `config` folder. 
+Yikes. `Rails.yaml(:filename)` is a bit nicer. 
+
+Copy `rails/yaml.rb` into the `config/initializers` folder. It wants a `config/settings` folder, but allows using the `config` folder for your yaml files. 
 
 ```ruby
 Rails.yaml(:filename)
@@ -24,7 +28,7 @@ settings:
 # but not both!
 ```
 
-If you really need the folder name to be something besides settings, you can set a configuration option:
+You can specify the settings folder:
 
 ```ruby
 # config/application.rb
@@ -32,4 +36,4 @@ If you really need the folder name to be something besides settings, you can set
   config.yaml = 'config/options'
 ```
 
-That's it! Simpleness!
+Read the code if you're confused. Its 20 lines long.
