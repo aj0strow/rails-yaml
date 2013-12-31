@@ -4,13 +4,17 @@
 YAML.load(Rails.root.join('config/settings/filename.yml'))[Rails.env]
 ```
 
-Yikes. `Rails.yaml(:filename)` is a bit nicer. 
-
-Copy `rails/yaml.rb` into the `config/initializers` folder. It wants a `config/settings` folder, but allows using the `config` folder for your yaml files. 
+Yikes. 
 
 ```ruby
 Rails.yaml(:filename)
 ```
+
+That's better.
+
+### Setup 
+
+Copy `rails/yaml.rb` into the `config/initializers` folder. It wants a `config/settings` folder, but allows using the `config` folder for your yaml files. 
 
 It wants settings by environment, but allows settings right at the root.
 
